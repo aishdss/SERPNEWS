@@ -1,0 +1,6 @@
+{
+  "name": "SerpNews — AI News Intelligence & Timeline Tracker",
+  "description": "SerpNews collects current news using SerpAPI, organizes related reports into developing stories, summarizes them, tracks their evolution over time, and provides Gen Z News Tea mode.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
