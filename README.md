@@ -1,20 +1,33 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+
+# 📰 SerpNews — AI News Intelligence & Timeline Tracker
+
+Turn scattered news coverage into clear, chronological, fact-checked stories — with an optional Gen-Z "Tea" mode and 45-second audio briefings.
+
+**[🔗 Live Demo](https://serpnews-ai-news-intelligence-timeline-tracker.ai.studio/)**
+
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## What is SerpNews?
 
-View your app in AI Studio: https://ai.studio/apps/a74073a7-ced0-4ce5-8be4-125068642dc1
+Most news reads like disconnected headlines. SerpNews pulls live articles via **SerpAPI**, clusters related coverage into a single **Story Hub**, and uses **Gemini** to generate an interactive timeline, a verified-vs-disputed breakdown, and a plain-language AI brief — so you can understand a developing story in seconds instead of reading a dozen articles.
 
-## Run Locally
+## ✨ Features
 
-**Prerequisites:**  Node.js
+- **🔄 Sync Live Wire** — pulls fresh articles in real time from SerpAPI's Google News engine
+- **📚 Developing Stories vs. All News Wire** — toggle between AI-clustered Story Hubs and the raw, unclustered article feed
+- **🧭 Story Hub** — an interactive timeline of every milestone in a story, each linked to its underlying source articles
+- **✅ Verified / Disputed Tracking** — a "How It Changed" view separating Verified, Unverified, Disputed, and Corrected claims, with full source attribution
+- **🍵 News Tea Mode** — flip any story into a casual, Gen-Z-style rewrite of the same facts; hit **Respin the Tea** to regenerate
+- **🔊 45-Second Audio Briefing** — listen to an AI-generated spoken flash briefing of any story
+- **🔎 Search** — look up any topic, person, or event and get the full Story Hub treatment on demand
+- **🔗 Source linking** — every card links straight back to the original article on the publisher's site
 
+## 🛠 Tech Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Frontend:** React 19, Vite 8, Tailwind CSS 4, TypeScript
+- **Backend:** Express 4 + `tsx` (custom Node server, Vite in middleware mode for dev)
+- **AI:** Google Gemini (`@google/genai`) for clustering, summarization, Tea mode, and TTS audio briefings
+- **Data & Database:** SerpAPI (Google News engine) powers the entire database — every article and Story Hub is sourced live from SerpAPI, then synced into a local JSON store (`data/news_db.json`) rather than a traditional hosted database
